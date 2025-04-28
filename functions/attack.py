@@ -1,8 +1,3 @@
-import random
-
-from ..main import Magic, Warrior
-
-
 def hero_physic_attack(physic_attack):
     """Функция корректирует значение физической атаки героя."""
     if physic_attack >= 50:
@@ -49,23 +44,3 @@ def reduce_magic_attack(magic_attack):
         magic_attack = 5
     
     return magic_attack
-
-
-def attack(self, enemy):
-    if isinstance(self, Magic):
-        if enemy.armor > 0:
-            crush_armor = min(self.magic_attack, enemy.armor)
-            enemy.armor -= crush_armor
-            print(f'Вы теряете {crush_armor} брони')
-        else:
-            enemy.health -= self.magic_attack
-            print(f'Вы теряете {self.magic_attack} XP')
-
-    elif isinstance(self, Warrior):
-        if enemy.armor > 0:
-            ...
-        else:
-            enemy.health -= self.physic_attack
-
-    else:
-        print('Вы одержали победу!')
